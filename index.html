@@ -1,1 +1,23 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><script src="tableau.extensions.1.latest.min.js"></script><script src="src/app.js"></script></head><body><div id="app"></div></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ICB Exec Briefing</title>
+  <script>
+    // Load the Tableau Extensions API non-blocking.
+    // app.js checks typeof tableau !== 'undefined' before calling initializeAsync()
+    // so it renders immediately from spec constants when hosted as a web-page zone.
+    (function() {
+      var s = document.createElement('script');
+      s.src = 'tableau.extensions.1.latest.min.js';
+      s.async = true;
+      document.head.appendChild(s);
+    })();
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="src/app.js"></script>
+</body>
+</html>
