@@ -4,17 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ICB Exec Briefing</title>
-  <script>
-    // Load the Tableau Extensions API non-blocking.
-    // app.js checks typeof tableau !== 'undefined' before calling initializeAsync()
-    // so it renders immediately from spec constants when hosted as a web-page zone.
-    (function() {
-      var s = document.createElement('script');
-      s.src = 'tableau.extensions.1.latest.min.js';
-      s.async = true;
-      document.head.appendChild(s);
-    })();
-  </script>
+  <!--
+    tableau.extensions.1.latest.min.js is intentionally NOT loaded here.
+    This page is hosted as a Tableau web-page zone (plain iframe) — not a
+    viz-extension worksheet. Loading the Extensions API in that context causes
+    initializeAsync() to hang forever (no extension host in parent window),
+    leaving the page blank. The .js file is kept in the repo for future
+    viz-extension .twbx packaging where it IS required.
+  -->
 </head>
 <body>
   <div id="app"></div>
